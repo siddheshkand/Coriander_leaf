@@ -51,7 +51,7 @@
 
         .feature-logo-text {
             font-size: .7em;
-
+            color: linear-gradient(to right, #78ffd6, #a8ff78);
         }
 
         #hero-company-name::after {
@@ -466,6 +466,7 @@
 </section>
 
 <footer>
+    <div id="map" style="width:400px;height:400px;background:yellow"></div>
     <div class="row">
         <div class="col span-1-of-2">
             <ul class="footer-nav">
@@ -501,8 +502,17 @@
 <script src="{% static 'vendors/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'resources/js/script.js' %}"></script>
 
-<script></script>
-
+<script>
+    function myMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(18.512689, 73.813156),
+            zoom: 10,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-tLAm9Np1l9AtGoxORyyXCyB5eRfGMNo&callback=myMap"></script>
 </body>
 
 </html>
