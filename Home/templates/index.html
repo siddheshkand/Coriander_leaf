@@ -117,7 +117,7 @@
             <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
         </div>
     </nav>
-    <div class="hero-text-box">
+    <div class="hero-text-box" id="hero-text-index">
         <h1>
             <span id="hero-company-name"> THE CORIANDER LEAF</span>
             <span class="feature-logo-text">
@@ -400,6 +400,19 @@
         };
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     }
+
+    $('.js--nav-icon').click(function () {
+        hero = document.getElementById('hero-text-index');
+        var icon = $('.js--nav-icon i');
+        if (icon.hasClass('ion-navicon-round')) {
+            console.log("open");
+            hero.style.zIndex = "-5";
+        } else {
+            console.log("close");
+            hero.style.zIndex = "0";
+        }
+    });
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-tLAm9Np1l9AtGoxORyyXCyB5eRfGMNo&callback=myMap"></script>
 </body>
