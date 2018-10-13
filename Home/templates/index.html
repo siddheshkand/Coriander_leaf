@@ -51,7 +51,20 @@
 
         .feature-logo-text {
             font-size: .7em;
-            color: linear-gradient(to right, #78ffd6, #a8ff78);
+            color: #a8ff78;
+        }
+
+        .app-screen {
+            height: 200px;
+            width: 200px;
+            margin: 10px !important;
+        }
+
+        .steps-box-img {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         #hero-company-name::after {
@@ -79,13 +92,13 @@
     <nav>
         <div class="row">
             <img src="{% static 'resources/img/logo.png' %}" alt="The Coriander leaf logo" class="logo">
-            <span id="company-name">The Coriander leaf</span>
+            {#            <span id="company-name">The Coriander leaf</span>#}
             <img src="{% static 'resources/img/logo.png' %}" alt="The Coriander leaf logo" class="logo-black">
             <ul class="main-nav js--main-nav">
                 <li><a href="#features">Out Speciality</a></li>
-                <li><a href="#works">How it works</a></li>
-                <li><a href="#cities">Our cities</a></li>
-                <li><a href="#plans">Sign up</a></li>
+                <li><a href="#delicious-meal">Delicious Meal</a></li>
+                <li><a href="#today-special">Today's Special</a></li>
+                <li><a href="#customer-review">Customer Review</a></li>
             </ul>
             <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
         </div>
@@ -141,7 +154,7 @@
     </div>
 </section>
 
-<section class="section-meals">
+<section class="section-meals" id="delicious-meal">
     <h2>Some of our Delicious Meal</h2>
     <ul class="meals-showcase clearfix">
         <li>
@@ -190,14 +203,22 @@
 </section>
 
 
-<section class="section-steps" id="works">
+<section class="section-steps" id="today-special">
     <div class="row">
         <h2>Today specials</h2>
     </div>
     <div class="row">
-        <div class="col span-1-of-2 steps-box">
-            <img src="{% static 'resources/img/today_specials.jpg' %}" alt="Today specials"
+        <div class="col span-1-of-2 steps-box steps-box-img">
+            <img src="{% static 'resources/img/veg_benedict.jpg' %}" alt="Today specials"
                  class="app-screen js--wp-2">
+            <img src="{% static 'resources/img/pancake.jpg' %}" alt="Today specials"
+                 class="app-screen js--wp-2">
+            <img src="{% static 'resources/img/spinach-egg.jpg' %}" alt="Today specials"
+                 class="app-screen js--wp-2">
+            <img src="{% static 'resources/img/Keema-Pav.jpg' %}" alt="Today specials"
+                 class="app-screen js--wp-2">
+
+
         </div>
         <div class="col span-1-of-2 steps-box">
             <div class="works-step clearfix">
@@ -212,12 +233,16 @@
                 <div>3</div>
                 <p>VEG BENEDICT</p>
             </div>
+            <div class="works-step clearfix">
+                <div>4</div>
+                <p>KEEMA PAV</p>
+            </div>
 
         </div>
     </div>
 </section>
 
-<section class="section-testimonials">
+<section class="section-testimonials" id="customer-review">
     <div class="row">
         <h2>Our customers can't live without us</h2>
     </div>
