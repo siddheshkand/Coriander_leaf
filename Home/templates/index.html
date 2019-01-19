@@ -109,7 +109,7 @@
             {#            <span id="company-name">The Coriander leaf</span>#}
             <img src="{% static 'resources/img/logo.png' %}" alt="The Coriander leaf logo" class="logo-black">
             <ul class="main-nav js--main-nav">
-                <li><a href="#features">Out Speciality</a></li>
+                <li><a href="#features">Our Speciality</a></li>
                 <li><a href="#delicious-meal">Delicious Meal</a></li>
                 <li><a href="#today-special">Today's Special</a></li>
                 <li><a href="#customer-review">Customer Review</a></li>
@@ -119,9 +119,9 @@
     </nav>
     <div class="hero-text-box" id="hero-text-index">
         <h1>
-            <span id="hero-company-name"> THE CORIANDER LEAF</span>
+            <span id="hero-company-name"> THE CORIANDER LEAF - Festival Of Taste</span>
             <span class="feature-logo-text">
-                <br>FAMILY&#9900;RESTO&#9900;BAR
+                <br>FAMILY RESTO BAR
             </span>
         </h1>
         <a class="btn btn-full js--scroll-to-plans" href="#">I'm hungry</a>
@@ -360,9 +360,6 @@
         <div class="col span-1-of-2" class="margin-left">
             <h1>Contact Us</h1>
             <ul style="list-style: none">
-                <li class="contact-info"><i class="ion-home"></i> Office address: 689/7 Laxmi Apt, Near Vasant Baug, Bibwewadi Pune 411037
-                </li>
-                <br>
                 <li class="contact-info"><i class="ion-home"></i> Coriander leaf hotel ,Opposite sharav lawns and spice
                     garden hotel ,Near tulja Bhawani mandir, MIT College road, Rambaug Colony, Kothrud, Pune
                 </li>
@@ -399,28 +396,57 @@
 
 <script>
     function myMap() {
+        {#        var mapOptions = {#}
+        {#            center: new google.maps.LatLng(18.512689, 73.813156),#}
+        {#            zoom: 10,#}
+        {#            mapTypeId: google.maps.MapTypeId.HYBRID#}
+        {#        };#}
+        {##}
+        {#        var marker = new google.maps.Marker({#}
+        {#    position: myLatlng,#}
+        {#    title:"Hello World!"#}
+        {##}
+        {#        var map = new google.maps.Map(document.getElementById("map"), mapOptions);#}
+        {#    }#}
+        var myLatlng = new google.maps.LatLng(18.512689, 73.813156);
         var mapOptions = {
-            center: new google.maps.LatLng(18.512689, 73.813156),
-            zoom: 10,
-            mapTypeId: google.maps.MapTypeId.HYBRID
+            zoom: 12,
+            center: myLatlng
         };
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title: "The Coriander Leaf"
+        });
+        var infowindow = new google.maps.InfoWindow({
+            content: "Casa Stavola F8 II"
+        });
+        var companyMarker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: "The Coriander Leaf",
+            visible: true
+        });
+        infowindow.open(map, companyMarker);
+
+// To add the marker to the map, call setMap();
+        marker.setMap(map);
+        $('.js--nav-icon').click(function () {
+            hero = document.getElementById('hero-text-index');
+            var icon = $('.js--nav-icon i');
+            if (icon.hasClass('ion-navicon-round')) {
+                console.log("open");
+                hero.style.zIndex = "-5";
+            } else {
+                console.log("close");
+                hero.style.zIndex = "0";
+            }
+        });
     }
 
-    $('.js--nav-icon').click(function () {
-        hero = document.getElementById('hero-text-index');
-        var icon = $('.js--nav-icon i');
-        if (icon.hasClass('ion-navicon-round')) {
-            console.log("open");
-            hero.style.zIndex = "-5";
-        } else {
-            console.log("close");
-            hero.style.zIndex = "0";
-        }
-    });
-
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-tLAm9Np1l9AtGoxORyyXCyB5eRfGMNo&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1BL1MtPej6hs05yoPDzSteHv65FcGABY&callback=myMap"></script>
 </body>
 
 </html>
