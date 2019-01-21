@@ -4,9 +4,11 @@ $(document).ready(function() {
     /* For the sticky navigation */
     $('.js--section-features').waypoint(function(direction) {
         if (direction == "down") {
+            $('nav').removeClass('navbar');
             $('nav').addClass('sticky');
         } else {
             $('nav').removeClass('sticky');
+            $('nav').addClass('navbar');
         }
     }, {
       offset: '60px;'

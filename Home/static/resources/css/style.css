@@ -25,7 +25,10 @@ body {
     overflow-x: hidden;
 }
 
-.clearfix {zoom: 1;}
+.clearfix {
+    zoom: 1;
+}
+
 .clearfix:after {
     content: '.';
     clear: both;
@@ -120,7 +123,7 @@ h2:after {
     color: #e67e22;
     font-size: 120%;
     margin-right: 10px;
-    
+
     /*secrets to align text and icons*/
     line-height: 120%;
     vertical-align: middle;
@@ -197,12 +200,9 @@ input[type=submit]:active {
 /* ----------------------------------------------- */
 
 header {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero-min.jpg);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero-min.jpg);
     background-size: cover;
-    background-position: center;
     height: 100vh;
-    background-attachment: fixed;
+    background: rgba(0,0,0,.8) fixed center;
 }
 
 .hero-text-box {
@@ -222,7 +222,7 @@ header {
     margin-top: 20px;
 }
 
-.logo-black { 
+.logo-black {
     display: none;
     height: 50px;
     width: auto;
@@ -285,7 +285,9 @@ header {
     z-index: 9999;
 }
 
-.sticky .main-nav { margin-top: 18px; }
+.sticky .main-nav {
+    margin-top: 18px;
+}
 
 .sticky .main-nav li a:link,
 .sticky .main-nav li a:visited {
@@ -293,8 +295,13 @@ header {
     color: #555;
 }
 
-.sticky .logo { display: none; }
-.sticky .logo-black { display: block; }
+.sticky .logo {
+    display: none;
+}
+
+.sticky .logo-black {
+    display: block;
+}
 
 /* ----------------------------------------------- */
 /* FEATURES */
@@ -348,7 +355,6 @@ header {
     -ms-transform: scale(1.03);
     transform: scale(1.03);
 }
-
 
 
 /* ----------------------------------------------- */
@@ -556,7 +562,9 @@ input[type=checkbox] {
     margin: 10px 5px 10px 0;
 }
 
-*:focus {outline: none;}
+*:focus {
+    outline: none;
+}
 
 
 /* ----------------------------------------------- */
@@ -591,7 +599,7 @@ footer {
 }
 
 .footer-nav li a:link,
-.footer-nav li a:visited, 
+.footer-nav li a:visited,
 .social-links li a:link,
 .social-links li a:visited {
     text-decoration: none;
@@ -643,16 +651,13 @@ footer p {
 }
 
 
-
-
 /* ----------------------------------------------- */
 /* Animations */
 /* ----------------------------------------------- */
 
 .js--wp-1,
 .js--wp-2,
-.js--wp-3
-{
+.js--wp-3 {
     opacity: 0;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
