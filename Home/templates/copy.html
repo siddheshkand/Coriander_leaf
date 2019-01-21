@@ -96,7 +96,7 @@
         }
 
         .contact-info {
-            font-size: 2em;
+            font-size: 1.2em;
             color: white;
         }
 
@@ -110,7 +110,7 @@
         }
 
         .navbar {
-            background: rgba(0, 0, 0, .0);
+            background: rgba(0, 0, 0, .1);
             position: absolute;
             z-index: 5;
             width: 100%;
@@ -410,37 +410,37 @@
         </div>
     </div>
 </section>
-
-<section class="section-testimonials" id="customer-review">
-    <div class="row">
-        <h2>Our customers can't live without us</h2>
-    </div>
-    <div class="row">
-        <div class="col span-1-of-3">
-            <blockquote>
-                Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so
-                Omnifood is a life-saver. Now that I got used to it, I couldn't live without my daily meals!
-                <cite><img src="{% static 'resources/img/customer-1.jpg' %}" alt="Customer 1 photo">Alberto
-                    Duncan</cite>
-            </blockquote>
-        </div>
-        <div class="col span-1-of-3">
-            <blockquote>
-                Inexpensive, healthy and great-tasting meals, delivered right to my home. We have lots of food delivery
-                here in Lisbon, but no one comes even close to Omifood. Me and my family are so in love!
-                <cite><img src="{% static 'resources/img/customer-2.jpg' %}" alt="Customer 2 photo">Joana Silva</cite>
-            </blockquote>
-        </div>
-        <div class="col span-1-of-3">
-            <blockquote>
-                I was looking for a quick and easy food delivery service in San Franciso. I tried a lot of them and
-                ended up with Omnifood. Best food delivery service in the Bay Area. Keep up the great work!
-                <cite><img src="{% static 'resources/img/customer-3.jpg' %}" alt="Customer 3 photo">Milton
-                    Chapman</cite>
-            </blockquote>
-        </div>
-    </div>
-</section>
+{##}
+{#<section class="section-testimonials" id="customer-review">#}
+{#    <div class="row">#}
+{#        <h2>Our customers can't live without us</h2>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#        <div class="col span-1-of-3">#}
+{#            <blockquote>#}
+{#                Omnifood is just awesome! I just launched a startup which leaves me with no time for cooking, so#}
+{#                Omnifood is a life-saver. Now that I got used to it, I couldn't live without my daily meals!#}
+{#                <cite><img src="{% static 'resources/img/customer-1.jpg' %}" alt="Customer 1 photo">Alberto#}
+{#                    Duncan</cite>#}
+{#            </blockquote>#}
+{#        </div>#}
+{#        <div class="col span-1-of-3">#}
+{#            <blockquote>#}
+{#                Inexpensive, healthy and great-tasting meals, delivered right to my home. We have lots of food delivery#}
+{#                here in Lisbon, but no one comes even close to Omifood. Me and my family are so in love!#}
+{#                <cite><img src="{% static 'resources/img/customer-2.jpg' %}" alt="Customer 2 photo">Joana Silva</cite>#}
+{#            </blockquote>#}
+{#        </div>#}
+{#        <div class="col span-1-of-3">#}
+{#            <blockquote>#}
+{#                I was looking for a quick and easy food delivery service in San Franciso. I tried a lot of them and#}
+{#                ended up with Omnifood. Best food delivery service in the Bay Area. Keep up the great work!#}
+{#                <cite><img src="{% static 'resources/img/customer-3.jpg' %}" alt="Customer 3 photo">Milton#}
+{#                    Chapman</cite>#}
+{#            </blockquote>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
 
 
 <section class="section-form">
@@ -515,8 +515,13 @@
         <div class="col span-1-of-2" class="margin-left">
             <h1>Contact Us</h1>
             <ul style="list-style: none">
-                <li class="contact-info"><i class="ion-home"></i> 123 Avenue Street</li>
-                <li class="contact-info"><i class="ion-android-phone-portrait"></i> 91 9797979797</li>
+                <li class="contact-info"><i class="ion-home"></i> Coriander leaf hotel, Opposite sharav lawns and spice
+                    garden hotel, Near tulja Bhawani mandir, MIT College road, Rambaug Colony, Kothrud, Pune
+                </li>
+                <br>
+                <li class="contact-info"><i class="ion-android-phone-portrait"></i> 7719400400</li>
+                <br>
+                <li class="contact-info"><i class="ion-android-phone-portrait"></i> 7719800800</li>
             </ul>
         </div>
     </div>
@@ -546,30 +551,61 @@
 <script src="{% static 'vendors/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'resources/js/script.js' %}"></script>
 
+
+
 <script>
     function myMap() {
+        {#        var mapOptions = {#}
+        {#            center: new google.maps.LatLng(18.512689, 73.813156),#}
+        {#            zoom: 10,#}
+        {#            mapTypeId: google.maps.MapTypeId.HYBRID#}
+        {#        };#}
+        {##}
+        {#        var marker = new google.maps.Marker({#}
+        {#    position: myLatlng,#}
+        {#    title:"Hello World!"#}
+        {##}
+        {#        var map = new google.maps.Map(document.getElementById("map"), mapOptions);#}
+        {#    }#}
+        var myLatlng = new google.maps.LatLng(18.512689, 73.813156);
         var mapOptions = {
-            center: new google.maps.LatLng(18.512689, 73.813156),
-            zoom: 10,
-            mapTypeId: google.maps.MapTypeId.HYBRID
+            zoom: 12,
+            center: myLatlng
         };
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title: "The Coriander Leaf"
+        });
+        var infowindow = new google.maps.InfoWindow({
+            content: "The Coriander Leaf"
+        });
+        var companyMarker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: "The Coriander Leaf",
+            visible: true
+        });
+        infowindow.open(map, companyMarker);
+
+// To add the marker to the map, call setMap();
+        marker.setMap(map);
+        $('.js--nav-icon').click(function () {
+            hero = document.getElementById('hero-text-index');
+            var icon = $('.js--nav-icon i');
+            if (icon.hasClass('ion-navicon-round')) {
+                console.log("open");
+                hero.style.zIndex = "-5";
+            } else {
+                console.log("close");
+                hero.style.zIndex = "0";
+            }
+        });
     }
 
-    $('.js--nav-icon').click(function () {
-        hero = document.getElementById('hero-text-index');
-        var icon = $('.js--nav-icon i');
-        if (icon.hasClass('ion-navicon-round')) {
-            console.log("open");
-            hero.style.zIndex = "-5";
-        } else {
-            console.log("close");
-            hero.style.zIndex = "0";
-        }
-    });
-
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-tLAm9Np1l9AtGoxORyyXCyB5eRfGMNo&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1BL1MtPej6hs05yoPDzSteHv65FcGABY&callback=myMap"></script>
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
