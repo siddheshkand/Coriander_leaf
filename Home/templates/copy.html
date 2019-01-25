@@ -612,14 +612,14 @@
 // To add the marker to the map, call setMap();
         marker.setMap(map);
         $('.js--nav-icon').click(function () {
-            hero = document.getElementById('hero-text-index');
+            {#hero = document.getElementById('hero-text-index');#}
             var icon = $('.js--nav-icon i');
             if (icon.hasClass('ion-navicon-round')) {
                 console.log("open");
-                hero.style.zIndex = "-5";
+                {#hero.style.zIndex = "-5";#}
             } else {
                 console.log("close");
-                hero.style.zIndex = "0";
+                {#hero.style.zIndex = "0";#}
             }
         });
     }
@@ -636,7 +636,6 @@
     function currentSlide(n) {
         showSlides(slideIndex = n);
     }
-
 
 
     showSlides();
