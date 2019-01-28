@@ -35,7 +35,6 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link rel="shortcut icon" href="{% static 'resources/img/logo.png' %}">
-
     <style>
         .margin-left {
             margin-left: 150px
@@ -116,7 +115,6 @@
             width: 100%;
         }
     </style>
-
     <style>
 
 
@@ -289,6 +287,144 @@
 
     </style>
 
+    <style>
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+
+        #myBtn {
+            background: #5cb85c;
+            border: none;
+            padding: 10px 5px;
+            color: white;
+        }
+
+        #modal-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #modal-image {
+            text-align: center;
+            width: 50%;
+            height: auto;
+        }
+
+        .modal-body {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        #modal_right {
+            flex-grow: 1;
+            font-size: 50px;
+            align-self: center;
+            padding: 10px 5px;
+        }
+
+        #modal_left {
+            flex-grow: 1;
+            font-size: 50px;
+            align-self: center;
+            padding: 10px 5px;
+        }
+
+        #modal-image-container {
+            flex-grow: 5;
+        }
+
+        @media only screen and (max-width: 760px) {
+            #modal-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+
+
 </head>
 <body>
 {% if mail_send_msg %}
@@ -312,8 +448,6 @@
         <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
     </div>
 </nav>
-
-
 <div class="slideshow-container">
     <div class="mySlides fade">
         {#  <div class="numbertext">1 / 3</div>#}
@@ -396,7 +530,6 @@
 
     </div>
 </section>
-
 <section class="section-meals" id="delicious-meal">
     <h2>Some of our Delicious Meal</h2>
     <ul class="meals-showcase clearfix">
@@ -444,13 +577,13 @@
         </li>
     </ul>
 </section>
-
-
 <section class="section-steps" id="menu-card">
     <div class="row">
         <h2>Menu</h2>
-        <h4 style="text-align: center"><a href="{% static 'resources/food/Menu Card New 1.pdf' %}" target="_blank">
-            Check our menu </a>
+        <h4 style="text-align: center">
+
+            <button id="myBtn">Check our menu</button>
+
         </h4>
         <br>
     </div>
@@ -572,14 +705,39 @@
 </footer>
 
 
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Our Menu</h2>
+        </div>
+
+        <div class="modal-body">
+            <div id="modal_left" onclick="prev_image()">
+                <i class="ion-ios-arrow-left"></i>
+            </div>
+            <div id="modal-image-container">
+                <img src="{% static 'resources/menu/1.jpg' %}" id="modal-image" alt="">
+            </div>
+            <div id="modal_right" onclick="next_image()">
+                <i class="ion-ios-arrow-right"></i>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <h5 style="text-align: center">thecorianderleaf.in&copy;2019</h5>
+        </div>
+    </div>
+
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
 <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
 <script src="{% static 'vendors/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'resources/js/script.js' %}"></script>
-
-
 <script>
     {#    function myMap() {#}
     {#        var mapOptions = {#}
@@ -632,7 +790,6 @@
     {#    }#}
 
 </script>
-{#<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1BL1MtPej6hs05yoPDzSteHv65FcGABY&callback=myMap"></script>#}
 <script>
     var slideIndex = 1;
 
@@ -670,6 +827,55 @@
         var msg = document.getElementById('mail-msg-popup');
         msg.remove();
     }
+</script>
+
+<script>
+    let modal = document.getElementById('myModal');
+    let btn = document.getElementById("myBtn");
+    let span = document.getElementsByClassName("close")[0];
+    btn.onclick = function () {
+        modal.style.display = "block";
+    };
+    span.onclick = function () {
+        modal.style.display = "none";
+    };
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    let current_image = 1;
+
+    function prev_image() {
+
+        if (current_image < 2) {
+            current_image = 21;
+        } else {
+            current_image = current_image - 1;
+        }
+        {#console.log(current_image);#}
+        change_image(current_image);
+    }
+
+    function next_image() {
+        if (current_image > 20) {
+            current_image = 1;
+        } else {
+            current_image = current_image + 1;
+        }
+        {#console.log(current_image);#}
+        change_image(current_image);
+    }
+
+    function change_image(nos) {
+        let image_obj = document.getElementById('modal-image');
+        let img_path = "{% static 'resources/menu/' %}" + nos + ".jpg";
+        image_obj.setAttribute('src', img_path);
+    }
+
 </script>
 </body>
 </html>
