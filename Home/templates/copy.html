@@ -265,7 +265,7 @@
 <div class="slideshow-container">
     <div class="mySlides fade">
         {#  <div class="numbertext">1 / 3</div>#}
-        <img src="{% static 'resources/img/hero.jpg' %}" class="images" alt="food images"/>
+        <img src="{% static 'resources/food/manchirun.jpg' %}" class="images" alt="food images"/>
         <div class="text">
             <span id="hero-company-name"> THE CORIANDER LEAF - Festival Of Taste</span>
             <span class="feature-logo-text">
@@ -275,7 +275,7 @@
     </div>
 
     <div class="mySlides fade">
-        <img src="{% static 'resources/img/1.jpg' %}" class="images" alt="food images"/>
+        <img src="{% static 'resources/food/soup.jpg' %}" class="images" alt="food images"/>
         <div class="text">
             <span id="hero-company-name"> THE CORIANDER LEAF - Festival Of Taste</span>
             <span class="feature-logo-text">
@@ -285,7 +285,7 @@
     </div>
 
     <div class="mySlides fade">
-        <img src="{% static 'resources/img/back-customers.jpg' %}" class="images" alt="food images"/>
+        <img src="{% static 'resources/food/Tandoori-pomfret-min.jpg' %}" class="images" alt="food images"/>
         <div class="text">
             <span id="hero-company-name"> THE CORIANDER LEAF - Festival Of Taste</span>
             <span class="feature-logo-text">
@@ -431,6 +431,7 @@
         </div>
     </div>
 </section>
+
 {##}
 {#<section class="section-testimonials" id="customer-review">#}
 {#    <div class="row">#}
@@ -656,7 +657,7 @@
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 5000); // Change image every 5 seconds
+        setTimeout(showSlides, 10000); // Change image every 5 seconds
     }
 </script>
 </body>
