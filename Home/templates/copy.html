@@ -261,13 +261,38 @@
             width: 100%;
             height: 350px;
         }
-        .section-features{
+
+        .section-features {
             margin-top: 20px;
+        }
+
+        .sent-msg {
+            color: green;
+        }
+
+        #sent-msg-title {
+            color: green;
+            display: inline-block;
+        }
+
+        .button {
+            background: none;
+            border: none;
+            font-weight: 900;
+            font-size: 21px;
+            float: right;
         }
     </style>
 
 </head>
 <body>
+{% if mail_send_msg %}
+
+    <div class="row sent-msg" id="mail-msg-popup">
+        <h3 id="sent-msg-title">{{ mail_send_msg }} <i class="ion-checkmark"></i></h3>
+        <button onclick="removeMail()" class="button">X</button>
+    </div>
+{% endif %}
 <nav class="navbar">
     <div class="row">
         <img src="{% static 'resources/img/logo.png' %}" alt="The Coriander leaf logo" class="logo">
@@ -331,6 +356,7 @@
 <section class="section-features js--section-features" id="features">
     <div class="row">
         <h2>Out Speciality</h2>
+
         <p class="long-copy">
             Hello, we're <i><b>The Coriander leaf</b></i>, your <i><b>new premium food restro bar</b></i>. We know
             you're always busy.
@@ -418,6 +444,9 @@
 <section class="section-steps" id="menu-card">
     <div class="row">
         <h2>Menu</h2>
+        <h4 style="text-align: center"><a href="{% static 'resources/food/Menu Card New 1.pdf' %}"> Check our menu </a>
+        </h4>
+        <br>
     </div>
     <div class="row menu-container-pdf">
         <div class="center menu-container-item">
@@ -430,7 +459,8 @@
         <h2>We're happy to hear from you</h2>
     </div>
     <div class="row">
-        <form method="post" action="#" class="contact-form">
+        <form method="post" action="" class="contact-form">
+            {% csrf_token %}
             <div class="row">
                 <div class="col span-1-of-3">
                     <label for="name">Name</label>
@@ -458,14 +488,6 @@
                         <option value="ad">Advertisement</option>
                         <option value="other">Other</option>
                     </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col span-1-of-3">
-                    <label>Newsletter?</label>
-                </div>
-                <div class="col span-2-of-3">
-                    <input type="checkbox" name="news" id="news" checked> Yes, please
                 </div>
             </div>
             <div class="row">
@@ -507,19 +529,28 @@
                 <li class="contact-info"><i class="ion-home"></i> Coriander leaf hotel, Opposite sharav lawns and spice
                     garden hotel, Near tulja Bhawani mandir, MIT College road, Rambaug Colony, Kothrud, Pune
                 </li>
+                <br/>
+                <li class="contact-info"><i class="ion-android-phone-portrait"></i>
+                    <a style="border-bottom: none" href="tel:7719400400">7719400400</a>
+                </li>
+                <br/>
+                <li class="contact-info"><i class="ion-android-phone-portrait"></i>
+                    <a style="border-bottom: none" href="tel:7719800800">7719800800</a>
+                </li>
                 <br>
-                <li class="contact-info"><i class="ion-android-phone-portrait"></i> 7719400400</li>
-                <br>
-                <li class="contact-info"><i class="ion-android-phone-portrait"></i> 7719800800</li>
+                <li class="contact-info"><i class="ion-android-mail"></i>
+                    <a href="mailto:thecl@googlegruops.com" style="border-bottom: none"> thecl@googlegruops.com</a>
+                </li>
             </ul>
         </div>
     </div>
     <div class="row">
         <ul class="social-links" style="display: inline-block;text-align: center">
             <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-            <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+            {#            <li><a href="#"><i class="ion-social-twitter"></i></a></li>#}
+            {#            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>#}
+            <li><a href="https://www.instagram.com/explore/tags/thecorianderleaf/"><i class="ion-social-instagram"></i></a>
+            </li>
         </ul>
     </div>
     <div class="row">
@@ -532,6 +563,7 @@
         </p>
     </div>
 </footer>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
@@ -625,6 +657,11 @@
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
         setTimeout(showSlides, 10000); // Change image every 5 seconds
+    }
+
+    function removeMail() {
+        var msg = document.getElementById('mail-msg-popup');
+        msg.remove();
     }
 </script>
 </body>

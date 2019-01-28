@@ -24,7 +24,8 @@ SECRET_KEY = '+lq@dvqhir@zbi-f&6h3&q0esjfy3gwjzc@@ntoah$wt5v2@+l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','siddkand.pythonanywhere.com','rsniper.pythonanywhere.com','www.thecorianderleaf.in','thecorianderleaf.in']
+ALLOWED_HOSTS = ['127.0.0.1', 'siddkand.pythonanywhere.com', 'rsniper.pythonanywhere.com', 'www.thecorianderleaf.in',
+                 'thecorianderleaf.in']
 
 # Application definition
 
@@ -115,3 +116,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# EMail setting for google
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
