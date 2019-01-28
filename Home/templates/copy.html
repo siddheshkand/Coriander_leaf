@@ -224,7 +224,7 @@
         }
 
         /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 720px) {
+        @media only screen and (max-width: 760px) {
             .prev, .next {
                 font-size: 11px
             }
@@ -236,6 +236,9 @@
             #hero-company-name::after {
                 width: 177%;
             }
+                .menu-container-pdf{
+            display: none;
+        }
 
         }
 
@@ -282,6 +285,7 @@
             font-size: 21px;
             float: right;
         }
+
     </style>
 
 </head>
@@ -444,7 +448,7 @@
 <section class="section-steps" id="menu-card">
     <div class="row">
         <h2>Menu</h2>
-        <h4 style="text-align: center"><a href="{% static 'resources/food/Menu Card New 1.pdf' %}"> Check our menu </a>
+        <h4 style="text-align: center"><a href="{% static 'resources/food/Menu Card New 1.pdf' %}" target="_blank"> Check our menu </a>
         </h4>
         <br>
     </div>
