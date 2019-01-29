@@ -373,20 +373,20 @@
             color: white;
         }
 
-        #myBtn {
+        #myBtn, #myBtn2 {
             background: #5cb85c;
             border: none;
             padding: 10px 5px;
             color: white;
         }
 
-        #modal-image-container {
+        #modal-image-container, #modal-image-container_2 {
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        #modal-image {
+        #modal-image, #modal-image-2 {
             text-align: center;
             width: 50%;
             height: auto;
@@ -398,13 +398,13 @@
             flex-wrap: nowrap;
         }
 
-        #modal_right {
+        #modal_right, #modal_right_2 {
             font-size: 50px;
             align-self: center;
             padding: 10px 5px;
         }
 
-        #modal_left {
+        #modal_left, #modal_left_2 {
             font-size: 50px;
             align-self: center;
             padding: 10px 5px;
@@ -415,17 +415,17 @@
         }
 
         @media only screen and (max-width: 760px) {
-            #modal-image {
+            #modal-image ,#modal-image-2{
                 width: 100%;
                 height: auto;
             }
 
-            #modal_right {
+            #modal_right,#modal_right_2 {
                 font-size: 20px;
                 font-weight: bolder;
             }
 
-            #modal_left {
+            #modal_left ,#modal_left_2{
                 font-size: 20px;
                 font-weight: bolder;
             }
@@ -594,7 +594,10 @@
         <h2>Menu</h2>
         <h4 style="text-align: center">
 
-            <button id="myBtn">Check our menu</button>
+            <button id="myBtn">Check our food menu</button>
+            <br>
+            <br>
+            <button id="myBtn2">Check our bar menu</button>
 
         </h4>
         <br>
@@ -718,13 +721,11 @@
 
 
 <div id="myModal" class="modal">
-
     <div class="modal-content">
         <div class="modal-header">
             <span class="close">&times;</span>
             <h2>Our Menu</h2>
         </div>
-
         <div class="modal-body">
             <div id="modal_left" onclick="prev_image()">
                 <i class="ion-ios-arrow-left"></i>
@@ -736,12 +737,33 @@
                 <i class="ion-ios-arrow-right"></i>
             </div>
         </div>
-
         <div class="modal-footer">
             <h5 style="text-align: center">thecorianderleaf.in&copy;2019</h5>
         </div>
     </div>
+</div>
 
+<div id="myModal2" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Our Menu</h2>
+        </div>
+        <div class="modal-body">
+            <div id="modal_left_2" onclick="prev_image_2()">
+                <i class="ion-ios-arrow-left"></i>
+            </div>
+            <div id="modal-image-container_2">
+                <img src="{% static 'resources/menu_bar/1.jpg' %}" id="modal-image-2" alt="">
+            </div>
+            <div id="modal_right_2" onclick="next_image_2()">
+                <i class="ion-ios-arrow-right"></i>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <h5 style="text-align: center">thecorianderleaf.in&copy;2019</h5>
+        </div>
+    </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -750,58 +772,6 @@
 <script src="https://cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
 <script src="{% static 'vendors/js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'resources/js/script.js' %}"></script>
-<script>
-    {#    function myMap() {#}
-    {#        var mapOptions = {#}
-    {#            center: new google.maps.LatLng(18.512689, 73.813156),#}
-    {#            zoom: 10,#}
-    {#            mapTypeId: google.maps.MapTypeId.HYBRID#}
-    {#        };#}
-    {##}
-    {#        var marker = new google.maps.Marker({#}
-    {#    position: myLatlng,#}
-    {#    title:"Hello World!"#}
-    {##}
-    {#        var map = new google.maps.Map(document.getElementById("map"), mapOptions);#}
-    {#    }#}
-    {#        var myLatlng = new google.maps.LatLng(18.512689, 73.813156);#}
-    {#        var mapOptions = {#}
-    {#            zoom: 12,#}
-    {#            center: myLatlng#}
-    {#        };#}
-    {#        var map = new google.maps.Map(document.getElementById("map"), mapOptions);#}
-    {##}
-    {#        var marker = new google.maps.Marker({#}
-    {#            position: myLatlng,#}
-    {#            title: "The Coriander Leaf"#}
-    {#        });#}
-    {#        var infowindow = new google.maps.InfoWindow({#}
-    {#            content: "The Coriander Leaf"#}
-    {#        });#}
-    {#        var companyMarker = new google.maps.Marker({#}
-    {#            position: myLatlng,#}
-    {#            map: map,#}
-    {#            title: "The Coriander Leaf",#}
-    {#            visible: true#}
-    {#        });#}
-    {#        infowindow.open(map, companyMarker);#}
-    {##}
-    {#// To add the marker to the map, call setMap();#}
-    {#        marker.setMap(map);#}
-    {#        $('.js--nav-icon').click(function () {#}
-    {#hero = document.getElementById('hero-text-index');#}
-    {#            var icon = $('.js--nav-icon i');#}
-    {#            if (icon.hasClass('ion-navicon-round')) {#}
-    {#                console.log("open");#}
-    {#hero.style.zIndex = "-5";#}
-    {#            } else {#}
-    {#                console.log("close");#}
-    {#hero.style.zIndex = "0";#}
-    {#            }#}
-    {#        });#}
-    {#    }#}
-
-</script>
 <script>
     var slideIndex = 1;
 
@@ -840,7 +810,7 @@
         msg.remove();
     }
 </script>
-
+{#Food menu#}
 <script>
     let modal = document.getElementById('myModal');
     let btn = document.getElementById("myBtn");
@@ -856,9 +826,7 @@
             modal.style.display = "none";
         }
     }
-</script>
 
-<script>
     let current_image = 1;
 
     function prev_image() {
@@ -885,6 +853,54 @@
     function change_image(nos) {
         let image_obj = document.getElementById('modal-image');
         let img_path = "{% static 'resources/menu/' %}" + nos + ".jpg";
+        image_obj.setAttribute('src', img_path);
+    }
+
+</script>
+
+{#Bar Menu#}
+<script>
+    let modal2 = document.getElementById('myModal2');
+    let btn2 = document.getElementById("myBtn2");
+    let span2 = document.getElementsByClassName("close")[1];
+    btn2.onclick = function () {
+        modal2.style.display = "block";
+    };
+    span2.onclick = function () {
+        modal2.style.display = "none";
+    };
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    let current_image_2 = 1;
+
+    function prev_image_2() {
+
+        if (current_image_2 < 2) {
+            current_image_2 = 9;
+        } else {
+            current_image_2 = current_image_2 - 1;
+        }
+        {#console.log(current_image);#}
+        change_image(current_image_2);
+    }
+
+    function next_image_2() {
+        if (current_image_2 > 8) {
+            current_image_2 = 1;
+        } else {
+            current_image_2 = current_image_2 + 1;
+        }
+        {#console.log(current_image);#}
+        change_image(current_image_2);
+    }
+
+    function change_image(nos) {
+        let image_obj = document.getElementById('modal-image-2');
+        let img_path = "{% static 'resources/menu_bar/' %}" + nos + ".jpg";
         image_obj.setAttribute('src', img_path);
     }
 
