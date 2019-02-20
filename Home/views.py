@@ -34,5 +34,5 @@ def home(request):
                   html_message=html_msg)
         mail_send_msg = "mail sent successfully"
         return render(request, 'copy.html', {"mail_send_msg": mail_send_msg})
-
+    
     return render(request, "copy.html")

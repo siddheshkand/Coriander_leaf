@@ -415,19 +415,19 @@
         }
 
         @media only screen and (max-width: 760px) {
-            #modal-image ,#modal-image-2{
+            #modal-image, #modal-image-2 {
                 width: 100%;
                 height: auto;
             }
 
-            #modal_right,#modal_right_2 {
-                font-size: 20px;
-                font-weight: bolder;
+            #modal_right, #modal_right_2 {
+                font-size: 50px;
+                font-weight: 900;
             }
 
-            #modal_left ,#modal_left_2{
-                font-size: 20px;
-                font-weight: bolder;
+            #modal_left, #modal_left_2 {
+                font-size: 50px;
+                font-weight: 900;
             }
 
             .modal-content {
@@ -830,14 +830,13 @@
     let current_image = 1;
 
     function prev_image() {
-
         if (current_image < 2) {
             current_image = 21;
         } else {
             current_image = current_image - 1;
         }
-        {#console.log(current_image);#}
-        change_image(current_image);
+        console.log(current_image);
+        change_image_1(current_image);
     }
 
     function next_image() {
@@ -846,11 +845,11 @@
         } else {
             current_image = current_image + 1;
         }
-        {#console.log(current_image);#}
-        change_image(current_image);
+        console.log(current_image);
+        change_image_1(current_image);
     }
 
-    function change_image(nos) {
+    function change_image_1(nos) {
         let image_obj = document.getElementById('modal-image');
         let img_path = "{% static 'resources/menu/' %}" + nos + ".jpg";
         image_obj.setAttribute('src', img_path);
@@ -885,7 +884,7 @@
             current_image_2 = current_image_2 - 1;
         }
         {#console.log(current_image);#}
-        change_image(current_image_2);
+        change_image_2(current_image_2);
     }
 
     function next_image_2() {
@@ -895,10 +894,10 @@
             current_image_2 = current_image_2 + 1;
         }
         {#console.log(current_image);#}
-        change_image(current_image_2);
+        change_image_2(current_image_2);
     }
 
-    function change_image(nos) {
+    function change_image_2(nos) {
         let image_obj = document.getElementById('modal-image-2');
         let img_path = "{% static 'resources/menu_bar/' %}" + nos + ".jpg";
         image_obj.setAttribute('src', img_path);
