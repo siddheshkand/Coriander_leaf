@@ -25,7 +25,7 @@ SECRET_KEY = '+lq@dvqhir@zbi-f&6h3&q0esjfy3gwjzc@@ntoah$wt5v2@+l'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'siddkand.pythonanywhere.com', 'rsniper.pythonanywhere.com', 'www.thecorianderleaf.in',
-                 'thecorianderleaf.in']
+                 'thecorianderleaf.in','192.168.43.253']
 
 # Application definition
 
